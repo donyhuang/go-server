@@ -1,4 +1,4 @@
-module gitlab.nongchangshijie.com/go-base/server
+module github.com/donyhuang/go-server
 
 go 1.19
 

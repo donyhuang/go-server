@@ -43,8 +43,8 @@ cache:
 conf:
   nacos:
     server:
-      host: mse-38bdbdd6-p.nacos-ans.mse.aliyuncs.com
-      port: 8848
+      host: 192.168.88.254
+      port: 8849
     client:
       timeoutMs: 5000
       logLevel: debug
@@ -65,8 +65,8 @@ conf:
 alipay:
   env: sandbox
   items:
-    - appId: 2021000119630295
-      privateKey: MIIEowIBAAKCAQEAyxNAKD0Gdjjhya7HRS0wXNmGQNcNOlh/youmILM2HMg0jFQhR47JSoJv8enGE81SNLyWOZ9dwfQWK5oL4K1adBo9aUqaHiROoV+P/FNXw5dxJmweGOtA9PrfIQVmteOWzzmgk3PS42brHcaQUOhGV+saxjuDJNwY+HXwH+GV8aRix29yYXDqazyhZK5xRoOpa+25RIPoX1bw4F1FDpMSge1/NOWQb+4Uwty1hq2GPXKE0OcvGMKxYYDXUyt7sJUC136osNIznRs48KlbYeeW/U7kqRzuDPAknUk28NGjfo9hpZw7KPKtuM1oOrslTh8xVF4i6m5Aeyqdmaopj3dTYwIDAQABAoIBABNHmpm3YXur3tPVAhoxNhw6kqJpSFo3uLo0E+ua2BJXd5WzDw3KIpYuWA5xkVqj7aAQH3sNBEu7rrcpAuOr0aCgNSBf8s3VyJlNh0//YZ+yKw3oydq3ywz3HGP4LU4rc0/tOq+FGYp5ZO0Iwv7LbpI+QeZ8E/FV7BD6sXd1ZVTxiPBAEpguJWe1fNBCkCKpOYk3QRHjy2LNRKIvmOPrWugi71XZj2WOvicw9U5Q4yTki6J7G7YYcvJENixkQA/uaIA94M/zamyMNZdH69iF7Ek0/MujPpyS+VmxiTWqSOE80x6YzYTaldolDrbVvi/VlLJqCS7YsuKONXQGIc1QDvECgYEA+S4Cz3PXmEOK8JewY8BAP9EgGFsYMpVlyNXcM3iyM35LR6TIO9z6RgkKc8nHmbFIBvzdjArZscTHSU91/zoUUB33S0+eghZcjOH+WHdhb3XPEUNWBlzIX5qYcYQNbwDKW4tRH3xejWXlxMks9T4uGyEjBvWzyefjcqmmcrrq3H8CgYEA0KIwCYgbRZIjjn8sSGSNIpJLhLjVukpJEF1G7bo9aXHTHkSeeOZOFw9wJfRFPIqIcYZorCOLo+nIGguCSLIkhF6Vjq15YGQoUzTeuX8Qh9fCufHUoxEbwi9rSEv0PTvJScSNQ28FvOOc96EZddxGJr2HKRX6VInaIojXczY7Jx0CgYAi3JYWEh36tpBswrwx6IbUptx3q98BzLcV1x3csak03RmJJ3vALFVzkPY+Zt+fGBd8qsoQOsBkR6SeFBjtIWIQJ3Eevz/s8VX3e/LKy8D9CB11S9dwQnDiN03Wq+P5QMIO9rndztenrrbrxj2c/hsTPpqY8a06tU+0Dho0eQQ83wKBgHCV9WJPZpgmgrWU/yqZyGfNlp8qt3tuNvtzuqDzDcznNcxxrysC7UUYeaahqPNAtty8caPjEqoDsI4Ng+MC7x3XhNGX35YatoAgWci0PxFvZ4+8ZskQpHAn8rby9fxNVRRP0wN+2BPUqJIhB4JIujqRsGyFha81LNfSDKIJs+YpAoGBAM+/IHjPT0QRPhkw858CxkNyhJmaEjhKIwBF3o4LP1LLtTTIjmFlMaDW068963b50m5iA8w1UCiPnW2ac/wcArnCOSEmIvg/mOjRjt8zLdp+aC2YaEUIu+X4SjO1FxoylPEsWhmBCf8Wq8ohWyOIW9+GbQizm5Tgw+XYqIQoMAaY
+    - appId: testappid
+      privateKey: private key
       appCertPublicFile: ./certs/alipay/appCertPublicKey.crt
       alipayRootCert: ./certs/alipay/alipayRootCert.crt
       alipayCertPublic: ./certs/alipay/alipayCertPublicKey_RSA2.crt
@@ -75,9 +75,9 @@ alipay:
 
 token:
   jwt:
-    appid: ad20230309
-    appsecret: fce9bdb9c8ff83279cb30625ab595ac4
-    tokenUrl: http://test-api.lucklyworld.com/ad/flash/token
+    appid: testappid
+    appsecret: xxxxx
+    tokenUrl: http://xxx.com/ad/flash/token
 
 metrics:
   prometheus:

@@ -2,10 +2,10 @@ package log
 
 import (
 	"context"
+	"github.com/donyhuang/go-server/pkg/reflectx"
 	"github.com/gin-gonic/gin"
 	"github.com/natefinch/lumberjack"
 	"github.com/sirupsen/logrus"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/reflectx"
 	"io"
 	"os"
 	"sync"

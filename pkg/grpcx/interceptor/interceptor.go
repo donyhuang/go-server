@@ -2,8 +2,8 @@ package interceptor
 
 import (
 	"context"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/log"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/trace"
+	"github.com/donyhuang/go-server/pkg/log"
+	"github.com/donyhuang/go-server/pkg/trace"
 	"runtime/debug"
 
 	"google.golang.org/grpc"

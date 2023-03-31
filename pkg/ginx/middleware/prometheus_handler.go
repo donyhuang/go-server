@@ -1,9 +1,9 @@
 package middleware
 
 import (
+	prom "github.com/donyhuang/go-server/pkg/prometheus"
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus"
-	prom "gitlab.nongchangshijie.com/go-base/server/pkg/prometheus"
 	"strconv"
 	"time"
 )

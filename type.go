@@ -1,15 +1,15 @@
 package server
 
 import (
+	"github.com/donyhuang/go-server/pkg/prometheus"
+	"github.com/donyhuang/go-server/pkg/server"
 	"github.com/spf13/viper"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/prometheus"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/server"
 
-	"gitlab.nongchangshijie.com/go-base/server/pkg/cache"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/conf"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/db"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/log"
-	kafka "gitlab.nongchangshijie.com/go-base/server/pkg/mq"
+	"github.com/donyhuang/go-server/pkg/cache"
+	"github.com/donyhuang/go-server/pkg/conf"
+	"github.com/donyhuang/go-server/pkg/db"
+	"github.com/donyhuang/go-server/pkg/log"
+	kafka "github.com/donyhuang/go-server/pkg/mq"
 )
 
 var appConf AppConf

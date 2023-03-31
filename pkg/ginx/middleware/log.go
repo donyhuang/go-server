@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"fmt"
-	log2 "gitlab.nongchangshijie.com/go-base/server/pkg/log"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/trace"
+	log2 "github.com/donyhuang/go-server/pkg/log"
+	"github.com/donyhuang/go-server/pkg/trace"
 	"math"
 	"time"
 

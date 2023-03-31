@@ -1,8 +1,8 @@
 package prometheus
 
 import (
+	"github.com/donyhuang/go-server/pkg/proc"
 	"github.com/prometheus/client_golang/prometheus"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/proc"
 )
 
 func NewHistogramVec(cfg *prometheus.HistogramOpts, labels []string, constLabel prometheus.Labels) *prometheus.HistogramVec {

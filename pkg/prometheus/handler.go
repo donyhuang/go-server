@@ -2,7 +2,7 @@ package prometheus
 
 import (
 	"fmt"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/reflectx"
+	"github.com/donyhuang/go-server/pkg/reflectx"
 	"net/http"
 	"sync"
 

@@ -1,8 +1,8 @@
 package prometheus
 
 import (
+	"github.com/donyhuang/go-server/pkg/proc"
 	"github.com/prometheus/client_golang/prometheus"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/proc"
 )
 
 func NewCounterVec(cfg *prometheus.CounterOpts, labels []string, constLabel prometheus.Labels) *prometheus.CounterVec {

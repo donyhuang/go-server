@@ -3,8 +3,8 @@ package server
 import (
 	"context"
 	"fmt"
+	"github.com/donyhuang/go-server/pkg/ginx/route"
 	"github.com/gin-gonic/gin"
-	"gitlab.nongchangshijie.com/go-base/server/pkg/ginx/route"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"

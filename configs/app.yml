@@ -1,0 +1,84 @@
+server:
+  mode: debug
+  prometheus:
+    port: 8084
+    path: "/metrics"
+  service:
+    - port: 8080
+      name: advertisement-platform
+      protocol: http
+      network: tcp
+      http:
+        health: /health
+    - port: 50051
+      name: advertisement-order
+      protocol: grpc
+      network: tcp
+
+kafka:
+  brokerList: localhost:9093
+  topic: appEvent
+  groupId: advertisementGroup
+log:
+  level: debug
+  path: "./logs/ad_platform.log"
+  maxSize: 10
+  maxBackups: 3
+  maxAge: 10
+storage:
+  clickhouse:
+    - server: localhost:9000
+      database: ad
+      user: username
+      pass: password
+  mysql:
+    - server: localhost:3306
+      database: advertisement
+      user: root
+      pass: 123456
+cache:
+  redis:
+    server: 192.168.88.253:6379
+    pass:
+conf:
+  nacos:
+    server:
+      host: 192.168.88.254
+      port: 8849
+    client:
+      timeoutMs: 5000
+      logLevel: debug
+      logDir: /tmp/nacos/log
+      cacheDir: /tmp/nacos/cache
+      namespace: 5aa73405-1b13-4239-9b3f-ffedd9f604c9
+    data:
+      - name: platform
+        conf:
+          dataId: platform
+          group: advertisement
+          confType: platform
+      - name: appProduct
+        conf:
+          dataId: app
+          group: advertisement
+          confType: app_product
+alipay:
+  env: sandbox
+  items:
+    - appId: testappid
+      privateKey: private key
+      appCertPublicFile: ./certs/alipay/appCertPublicKey.crt
+      alipayRootCert: ./certs/alipay/alipayRootCert.crt
+      alipayCertPublic: ./certs/alipay/alipayCertPublicKey_RSA2.crt
+      notifyURL: http://localhost:8080/pay/notify
+
+
+token:
+  jwt:
+    appid: testappid
+    appsecret: xxxxx
+    tokenUrl: http://xxx.com/ad/flash/token
+
+metrics:
+  prometheus:
+    enable: true

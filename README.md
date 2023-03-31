@@ -10,12 +10,7 @@
 
 
 ## 示例配置文件 configs/app.yml
-## 本地go配置
-```
-go env -w GOPRIVATE=gitlab.nongchangshijie.com
-go env -w GOINSECURE=gitlab.nongchangshijie.com
-git config --global url."git@gitlab.nongchangshijie.com:".insteadOf "https://gitlab.nongchangshijie.com"
-```
+
 ## 开启一个http server
 go get gitlab.nongchangshijie.com/go-base/server/pkg/server
 ```golang

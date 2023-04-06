@@ -46,7 +46,7 @@ tick := time.NewTicker(time.Minute)
 doneChan := make(chan struct{})
 appEvent := event.NewEvent(svr.GetContext(), doneChan, tick, db.GetDb(), db.GetClickHouseConn())
 appEvent.Run()
-proc.AddDoneFn(appEvent.Stop) //在收到信号sigterm|SIGINT之后等待自己的携程优雅关闭
+proc.AddDoneFn(appEvent.Stop) //在收到信号sigterm|SIGINT之后等待自己的协程优雅关闭
 ```
 ## 开启一个http server 以及grpc server 同时等待自己的工作协程结束
 ```golang

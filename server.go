@@ -76,7 +76,7 @@ func (s *Server) init() {
 		if err != nil {
 			log.Fatalf("init mysql err %v\n", err)
 		}
-		proc.AddDoneFn(func() {
+		proc.AddBseDoneFn(func() {
 			db.CloseMysql()
 			log.Println("mysql close")
 		})
@@ -86,7 +86,7 @@ func (s *Server) init() {
 		if err != nil {
 			log.Fatalf("init clickhouse err %v\n", err)
 		}
-		proc.AddDoneFn(func() {
+		proc.AddBseDoneFn(func() {
 			db.CloseClick()
 			log.Println("clickhouse close")
 		})
@@ -98,7 +98,7 @@ func (s *Server) init() {
 			log.Fatalf("init kafka err %v\n", err)
 		}
 		s.kInstance = myKafka
-		proc.AddDoneFn(func() {
+		proc.AddBseDoneFn(func() {
 			myKafka.Close()
 			log.Println("kafka Close ")
 		})
@@ -110,7 +110,7 @@ func (s *Server) init() {
 		if err != nil {
 			log.Fatalf("init nacos err %v\n", err)
 		}
-		proc.AddDoneFn(func() {
+		proc.AddBseDoneFn(func() {
 			for _, v := range cancelListenFnList {
 				vCopy := v
 				_ = vCopy()
@@ -120,7 +120,7 @@ func (s *Server) init() {
 	}
 	if len(appConf.Cache.Redis) > 0 {
 		cache.NewPools(appConf.Cache.Redis)
-		proc.AddDoneFn(cache.StopAllPools)
+		proc.AddBseDoneFn(cache.StopAllPools)
 	}
 	s.initServer()
 }
@@ -206,7 +206,7 @@ func (s *Server) start() {
 		go func() {
 			s.httpServer.Start()
 		}()
-		proc.AddDoneFn(s.httpServer.ShutDown)
+		proc.AddOutDoneFn(s.httpServer.ShutDown)
 	}
 	if s.grpcServer != nil {
 		if s.grpcHandle[s.grpcServer.Name] == nil {
@@ -216,7 +216,7 @@ func (s *Server) start() {
 		go func() {
 			s.grpcServer.Start(s.grpcHandle[s.grpcServer.Name])
 		}()
-		proc.AddDoneFn(s.grpcServer.ShutDown)
+		proc.AddOutDoneFn(s.grpcServer.ShutDown)
 	}
 
 	s.initKafkaConsumer()
